@@ -5,7 +5,7 @@
 ##
 ##
 
-SRC	=	src_printf/flags_printf.c	\
+SRC	=	src_printf/functions.c	\
 		src_printf/my_printf.c		\
 		src_printf/main.c		\
 

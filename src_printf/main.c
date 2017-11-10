@@ -5,13 +5,10 @@
 
 int	main()
 {
-	int var2 = 3;
-	int *size2 = &var2;
+	char *str = "-12";
 
-	my_printf("%b\n", -12);
-	my_putchar('\n');
-	my_printf("%p\n", size2);
-//        printf("%p\n", size2);
+	printf("%-s\n", str);
+
 	return (0);
 
 }
