@@ -7,8 +7,6 @@
 
 SRC	=	src_printf/functions.c	\
 		src_printf/my_printf.c		\
-		src_printf/main.c		\
-
 
 OBJ	=	$(SRC:.c=.o)
 
