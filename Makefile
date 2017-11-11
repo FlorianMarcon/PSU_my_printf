@@ -1,29 +1,20 @@
 ##
 ## EPITECH PROJECT, 2017
-## Makefile
+## Makefile pour compresser lib
 ## File description:
-##
+## 
 ##
 
-SRC	=	src_printf/functions.c	\
-		src_printf/my_printf.c		\
+SRC	=	$(wildcard *.c)
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	my_printf
-
-CFLAGS	=	-W -Wall -Wextra -Werror -I./include
-
 all:		$(OBJ)
+	ar rc libmy.a $(OBJ)
 	make -C ./lib/my
-	gcc -o $(NAME) $(OBJ) -L./lib/my -lmy
+	rm *.o
 
 clean:
-		rm -f $(OBJ)
-		rm -f *~
-		rm -f *#
-
-fclean:		clean
-		rm -f $(NAME)
-
-re:	fclean all
+	rm -f *.o
+	rm -f *~
+	rm -f *#
