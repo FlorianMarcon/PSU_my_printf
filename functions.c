@@ -100,6 +100,7 @@ int	printOct(va_list tmp)
 	my_putstr(str);
 	return (len);
 }
+
 int	printHexa(va_list tmp)
 {
 	int nb = va_arg(tmp, int);
@@ -111,6 +112,7 @@ int	printHexa(va_list tmp)
 	my_putstr(str);
 	return (len);
 }
+
 int	printHexa_maj(va_list tmp)
 {
 	int nb = va_arg(tmp, int);
@@ -130,7 +132,6 @@ void	printLen(va_list tmp, int size)
 	*len = size;
 }
 
-
 int	printUnint(va_list tmp)
 {
 	unsigned int nb = va_arg(tmp, unsigned int);
@@ -138,10 +139,4 @@ int	printUnint(va_list tmp)
 
 	my_put_unnbr(nb);
 	return (len);
-}/*
-int	printAdresse(void *var)
-{
-
-
 }
-*/

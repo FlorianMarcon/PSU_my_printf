@@ -11,8 +11,6 @@
 
 int    my_printf(char *str, ...);
 
-//int	flags_printf(char cara, va_list tmp, int size_now);
-
 typedef struct tab {
         char balise;
         int (*fptr)(va_list);

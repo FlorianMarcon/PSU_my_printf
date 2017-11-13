@@ -30,16 +30,15 @@ void	init_tab(tab_t *tab)
 	tab[7].fptr = printHexa_maj;
 	tab[8].balise = 'u';
 	tab[8].fptr = printUnint;
-//	tab[10].balise = 'p';
-//	tab[10].fptr = printAdresse;
 	tab[11].balise = 'S';
 	tab[11].fptr = print_S;
 }
+
 int	choice_function(tab_t *tab, va_list tmp, char balise, int size_now)
 {
 	int i = 0;
 	int size;
-
+	
 	while(i != 12) {
 		if (balise == tab[i].balise) {
 			size = tab[i].fptr(tmp);
@@ -49,11 +48,15 @@ int	choice_function(tab_t *tab, va_list tmp, char balise, int size_now)
 	}
 	if (balise == 'n') {
 		printLen(tmp, size_now);
+		return (0);
+	}
+	if (balise == '%') {
+		putchar('%');
+		return (1);
 	}
 	return (0);
-
+	
 }
-
 
 int	my_printf(char *str, ...)
 {
@@ -61,13 +64,12 @@ int	my_printf(char *str, ...)
 	tab_t *tab = malloc(sizeof(tab_t) * 12);
 	int i = 0;
 	int size_now = 0;
-
+	
 	if (tab == NULL)
 		exit (84);
 	init_tab(tab);
 	va_start(tmp, str);
 	while(str[i] != '\0') {
-
 		if(str[i] == '%') {
 			i++;
 			size_now += choice_function(tab, tmp, str[i], size_now);
