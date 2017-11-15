@@ -29,3 +29,4 @@ clean:
 
 fclean: clean
 	rm -f libmy.a
+	make fclean -C ./lib/my/

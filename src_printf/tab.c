@@ -34,6 +34,7 @@ void	init_tab(tab_t *tab)
 	tab[10].fptr = printAdresse;
 	tab[11].balise = 'S';
 	tab[11].fptr = print_S;
+	tab[12].balise = '%';
 }
 
 void	init_tab_speci(specifier_t *tab)
