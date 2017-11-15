@@ -25,6 +25,9 @@ clean:
 	rm -f *.o
 	rm -f *~
 	rm -f *#
+	rm -f src_printf/*.o
+	rm -f src_printf/*~
+	rm -f src_printf/*#
 
 fclean: clean
 	rm -f libmy.a

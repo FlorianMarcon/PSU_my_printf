@@ -18,8 +18,5 @@ int	find_speci(char *str)
 	while (str[0] != tab_speci[z].balise && z < 4) {
 		z++;
 	}
-	if (str[0] == tab_speci[z].balise) {
-		return(z);
-	}
-	return(0);
+	return (z);
 }
