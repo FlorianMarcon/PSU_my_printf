@@ -11,7 +11,6 @@ SRC	=	$(wildcard *.c)		\
 		src_printf/functions.c		\
 		src_printf/print_speci.c	\
 		src_printf/speci.c		\
-		src_printf/tab.c		\
 
 OBJ	=	$(SRC:.c=.o)
 

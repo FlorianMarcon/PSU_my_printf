@@ -13,14 +13,12 @@
 
 int	find_speci(char *str)
 {
-	specifier_t *specifier = malloc(sizeof(specifier) * 4);
 	int z = 0;
 
-	init_tab_speci(specifier);
-	while (my_strncmp(str, specifier[z].balise, specifier[z].size) != 0 && z < 4) {
+	while (str[0] != tab_speci[z].balise && z < 4) {
 		z++;
 	}
-	if (my_strncmp(str, specifier[z].balise, specifier[z].size) == 0) {
+	if (str[0] == tab_speci[z].balise) {
 		return(z);
 	}
 	return(0);

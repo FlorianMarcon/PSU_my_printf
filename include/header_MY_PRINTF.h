@@ -19,17 +19,9 @@ typedef struct tab {
 } tab_t;
 
 typedef struct specifier {
-        char *balise;
+        char balise;
         int size;
 } specifier_t;
-
-
-//tab§§§§§§§§§§§§§§§§§§§§
-void	init_tab(tab_t *tab);
-
-void	init_tab_speci(specifier_t *tab);
-
-
 
 //choice_function§§§§§§§§§§§§§§§§
 int	choice_function(va_list tmp, char *balise);
@@ -80,5 +72,14 @@ int	printUnint(va_list tmp, char *str);
 
 int     printAdresse(va_list tmp, char *str);
 
+//tab§§§§§§§§§§§§§§§§§
+
+static tab_t const tab[13] = {{'c', printChar}, {'s', printStr}, {'d', printInt},
+                                {'i', printInt}, {'b', printBinary}, {'o', printOct},
+                                {'x', printHexa}, {'X', printHexa_maj}, {'u', printUnint},
+                                {'u', printUnint}, {'p', printAdresse}, {'S', print_S},
+                                {'%', printInt}};
+
+static specifier_t const tab_speci[4] = {{'.', 1}, {'+', 1}, {' ', 1}, {'#', 1}};
 
 #endif

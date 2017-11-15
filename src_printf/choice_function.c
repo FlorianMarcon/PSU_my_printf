@@ -16,25 +16,20 @@ int	choice_function(va_list tmp, char *balise)
 	int i = 0;
 	int a = 0;
 	int size = 0;
-	tab_t *tab = malloc(sizeof(tab_t) * 13);
 	int len = my_strlen(balise);
 
-	if (tab == NULL)
-		exit (84);
-	init_tab(tab);
 	while (a != len) {
 		i = 0;
 		while(i != 12) {
 			if (balise[a] == tab[i].balise) {
 				size = tab[i].fptr(tmp, balise);
-				free(tab);
 				return (size);
 			}
 			i++;
 		}
 		if (balise[a] == tab[i].balise)
 			my_putchar('%');
-		a++;
+	a++;
 	}
 	exit (84);
 }
