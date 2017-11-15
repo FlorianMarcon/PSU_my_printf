@@ -29,12 +29,12 @@ int     speci_printInt(char *str, int nb)
 			break;
 		case 2:
 			var = my_getnbr(str);
+			if (var == 0)
+				my_putchar(' ');
 			while (var != 0) {
 				my_putchar(' ');
 				var--;
 			}
-			if (var == 0)
-				my_putchar(' ');
 			var = lenint(my_getnbr(str));
 			break;
 		case 4:
