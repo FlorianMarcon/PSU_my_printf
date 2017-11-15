@@ -18,7 +18,7 @@ int	my_printf(char *str, ...)
 	int size = my_strlen(str);
 
 	va_start(tmp, str);
-	while(i <= size) {
+	while(i < size) {
 		if(str[i] == '%') {
 			i++;
 			i += choice_function(tmp, &str[i]);
