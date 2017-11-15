@@ -1,0 +1,38 @@
+/*
+** EPITECH PROJECT, 2017
+** myprintf
+** File description:
+** printf
+*/
+
+#include "my.h"
+#include <stdarg.h>
+#include "header_MY_PRINTF.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+int	choice_function(va_list tmp, char *balise)
+{
+	int i = 0;
+	int a = 0;
+	int size = 0;
+	tab_t *tab = malloc(sizeof(tab_t) * 12);
+	int len = my_strlen(balise);
+
+	if (tab == NULL)
+		exit (84);
+	init_tab(tab);
+	while (a != len) {
+		i = 2;
+		while(i != 12) {
+			if (balise[a] == tab[i].balise) {
+				size = tab[i].fptr(tmp, balise);
+				free(tab);
+				return (size);
+			}
+			i++;
+		}
+		a++;
+	}
+	exit (84);
+}

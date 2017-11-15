@@ -17,3 +17,6 @@ clean:
 	rm -f *.o
 	rm -f *~
 	rm -f *#
+
+fclean: clean
+	rm -f libmy.a
