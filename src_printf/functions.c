@@ -130,7 +130,7 @@ int	printHexa(va_list tmp, char *str)
 
 	string = convert_base(string, "0123456789", "0123456789abcdef");
 	len += speci_printHexa(str, string);
-	string = my_strlowcase(str);
+	string = my_strlowcase(string);
 	my_putstr(string);
 	return (len + 1);
 }
