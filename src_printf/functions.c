@@ -66,7 +66,6 @@ int	printStr(va_list tmp, char *str)
 
 	if (speci == 4) {
 		my_putstr(string);
-		var = 1;
 	} else if (speci == 0) {
 		var = my_getnbr(str);
 		while (i < var && string[i] != '\0') {
