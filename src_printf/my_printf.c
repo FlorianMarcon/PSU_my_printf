@@ -25,8 +25,8 @@ int	my_printf(char *str, ...)
 		}
 		else {
 			my_putchar(str[i]);
+			i++;
 		}
-		i++;
 	}
 	va_end(tmp);
 	return (0);

@@ -54,20 +54,20 @@ int	print_S(va_list tmp, char *str)
 	else
 		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%S|\n");
 
-	return (size + 1);
+	return (1);
 }
 
 int	printStr(va_list tmp, char *str)
 {
 	char *string = va_arg(tmp, char *);
-	int len = my_strlen(string);
+//	int len = my_strlen(string);
 	int speci = find_speci(str);
 
 	if (speci == 4)
 		my_putstr(string);
 	else
 		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%s|\n");
-	return (len + 1);
+	return (1);
 }
 
 int	printChar(va_list tmp, char *str)
@@ -79,7 +79,7 @@ int	printChar(va_list tmp, char *str)
 		my_putchar(letter);
 	else
 		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%c|\n");
-	return (2);
+	return (1);
 }
 
 int	printInt(va_list tmp, char *str)
@@ -95,17 +95,17 @@ int	printBinary(va_list tmp, char *str)
 {
 	unsigned int unsi = va_arg(tmp, unsigned int);
 	char *string = stock_int_in_str(unsi);
-	int len;
+//	int len;
 	int speci = find_speci(str);
 
 	if (speci == 4) {
 		string = convert_base(string, "0123456789", "01");
-		len = my_strlen(string);
+//		len = my_strlen(string);
 		my_putstr(string);
 	}
 	else
 		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%b|\n");
-	return (len + 1);
+	return (1);
 }
 
 int	printOct(va_list tmp, char *str)
@@ -114,9 +114,7 @@ int	printOct(va_list tmp, char *str)
 	char *string = stock_int_in_str(nb);
 	int len;
 
-
 	string = convert_base(string, "0123456789", "01234567");
-	my_strlen(string);
 	len = speci_printOct(str, string);
 	my_putstr(string);
 	return (len + 1);
@@ -168,16 +166,16 @@ int	printAdresse(va_list tmp, char *str)
 {
 	unsigned int unsi = va_arg(tmp, unsigned int);
 	char *var2 = stock_int_in_str((int)unsi);
-	int len = 0;
+//	int len = 0;
 	int speci = find_speci(str);
 
 	if (speci == 4) {
 		var2 = convert_base(var2, "0123456789", "0123456789ABCDEF");
-		len += my_strlen(var2) + 2;
+	//	len += my_strlen(var2) + 2;
 		my_putstr("0x");
 		my_putstr(var2);
 	}
 	else
 		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%p|\n");
-	return (len + 1);
+	return (1);
 }

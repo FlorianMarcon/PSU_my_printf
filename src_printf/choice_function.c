@@ -31,5 +31,5 @@ int	choice_function(va_list tmp, char *balise)
 			my_putchar('%');
 	a++;
 	}
-	exit (84);
+	return (0);
 }

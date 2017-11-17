@@ -17,7 +17,7 @@ int     speci_printInt(char *str, int nb)
 		case 0:
 			var = my_getnbr(str);
 			var2 = lenint(nb) - var;
-			var = lenint(var);
+			var = lenint(var) + 1;
 			while (var2 < 0) {
 				my_putchar('0');
 				var2++;
@@ -26,6 +26,7 @@ int     speci_printInt(char *str, int nb)
 		case 1:
 			if (nb >= 0)
 				my_putchar('+');
+                        var = 1;
 			break;
 		case 2:
 			var = my_getnbr(str);
@@ -35,20 +36,20 @@ int     speci_printInt(char *str, int nb)
 				my_putchar(' ');
 				var--;
 			}
-			var = lenint(my_getnbr(str));
+			var = lenint(my_getnbr(str)) + 1;
 			break;
 		case 4:
 			var = my_getnbr(str);
 			var2 = lenint(nb) - var;
 			if (str[0] >= '0' && str[0] <= '9')
-				var = lenint(var) -1;
+				var = lenint(var);
 			else
-				var = -1;
+				var = 0;
 			while (var2 < 0) {
 				my_putchar(' ');
 				var2++;
 			}
-			break;
+                	break;
                 }
                 return (var);
 }
@@ -65,25 +66,26 @@ int     speci_printOct(char *str, char *string)
                                 my_putchar('0');
                                 var++;
                         }
-                        var = lenint(my_getnbr(str));
+                        var = lenint(my_getnbr(str)) + 1;
                         break;
                 case 1:
                         if (my_getnbr(string) >= 0)
                                 my_putchar('+');
-                        var++;
+                        var = 1;
                         break;
                 case 2:
-                        var = my_getnbr(str);
+                        var = my_getnbr(str) - my_strlen(string);
                         if (var == 0)
                                 var = 1;
                         while (var != 0) {
                                 my_putchar(' ');
                                 var--;
                         }
-                        var = lenint(my_getnbr(str));
+                        var = lenint(my_getnbr(str)) + 1;
                         break;
                 case 3:
                         my_putchar('0');
+                        var = 1;
                         break;
                 case 4:
                         var = my_strlen(string) - my_getnbr(str);
@@ -91,7 +93,10 @@ int     speci_printOct(char *str, char *string)
                                 my_putchar(' ');
                                 var++;
                         }
-                        var = lenint(my_getnbr(str));
+                        if (string[0] >= '0' && string[0] <= '9')
+                                var = lenint(my_getnbr(str));
+                        else
+                                var = 0;
                         break;
 
         }
@@ -110,7 +115,9 @@ int     speci_printHexa(char *str, char *string)
                                 my_putchar('0');
                                 var++;
                         }
-                        var = lenint(my_getnbr(str));
+                        /*my_putstr("\nstr ===\n")
+                        my_putstr(str)*/
+                        var = lenint(my_getnbr(str)) + 1;
                         break;
                 case 1:
                         if (my_getnbr(string) >= 0)
@@ -118,17 +125,18 @@ int     speci_printHexa(char *str, char *string)
                         var++;
                         break;
                 case 2:
-                        var = my_getnbr(str);
+                        var = my_strlen(string) - my_getnbr(str);
                         if (var == 0)
                                 var = 1;
-                        while (var != 0) {
+                        while (var <= 0) {
                                 my_putchar(' ');
-                                var--;
+                                var++;
                         }
-                        var = lenint(my_getnbr(str));
+                        var = lenint(my_getnbr(str)) + 1;
                         break;
                 case 3:
                         my_putstr("0x");
+                        var = 1;
                         break;
                 case 4:
                         var = my_strlen(string) - my_getnbr(str);
@@ -136,6 +144,7 @@ int     speci_printHexa(char *str, char *string)
                                 my_putchar(' ');
                                 var++;
                         }
+                        if (str[0] <= '9' && str[0] >= '0')
                         var = lenint(my_getnbr(str));
                         break;
 
@@ -154,7 +163,7 @@ int     speci_printHexa_maj(char *str, char *string)
                                 my_putchar('0');
                                 var++;
                         }
-                        var = lenint(my_getnbr(str));
+                        var = lenint(my_getnbr(str)) + 1;
                         break;
                 case 1:
                         if (my_getnbr(string) >= 0)
@@ -173,6 +182,7 @@ int     speci_printHexa_maj(char *str, char *string)
                         break;
                 case 3:
                         my_putstr("0X");
+                        var = 1;
                         break;
                 case 4:
                         var = my_strlen(string) - my_getnbr(str);
@@ -186,6 +196,7 @@ int     speci_printHexa_maj(char *str, char *string)
         }
         return (var);
 }
+
 int     speci_printUnint(char *str, unsigned int nb)
 {
         int var = 0;
