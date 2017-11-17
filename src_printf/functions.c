@@ -60,14 +60,23 @@ int	print_S(va_list tmp, char *str)
 int	printStr(va_list tmp, char *str)
 {
 	char *string = va_arg(tmp, char *);
-//	int len = my_strlen(string);
 	int speci = find_speci(str);
+	int var = 0;
+	int i = 0;
 
-	if (speci == 4)
+	if (speci == 4) {
 		my_putstr(string);
-	else
+		var = 1;
+	} else if (speci == 0) {
+		var = my_getnbr(str);
+		while (i < var && string[i] != '\0') {
+			my_putchar(string[i]);
+			i++;
+		}
+		var = lenint(my_getnbr(str)) + 1;
+	} else
 		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%s|\n");
-	return (1);
+	return (var + 1);
 }
 
 int	printChar(va_list tmp, char *str)
