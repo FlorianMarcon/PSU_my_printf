@@ -12,7 +12,7 @@
 
 struct linked_list      *get_lastnode(struct linked_list *tmp)
 {
-        while(tmp->next != NULL)
-                tmp = tmp->next;
-        return (tmp);
+	while(tmp->next != NULL)
+		tmp = tmp->next;
+	return (tmp);
 }

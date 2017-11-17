@@ -2,9 +2,8 @@
 ** EPITECH PROJECT, 2017
 ** my_char_isalpha.c
 ** File description:
-** 
+**
 */
-
 #include "my.h"
 
 int	my_char_isalpha(char c)

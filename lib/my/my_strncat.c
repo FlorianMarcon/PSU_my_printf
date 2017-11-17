@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my_strncat.c
 ** File description:
-** 
+**
 */
 #include <string.h>
 
@@ -14,7 +14,7 @@ char	*my_strncat(char *dest, char const *src, int nb)
 	int i = 0;
 
 	n = my_strlen(dest);
-       	while(i != nb ) {
+	while(i != nb ) {
 		dest[n + i] = src[i];
 		i++;
 	}

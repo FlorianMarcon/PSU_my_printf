@@ -2,19 +2,17 @@
 ** EPITECH PROJECT, 2017
 ** my_str_to_word_array.c
 ** File description:
-** 
+**
 */
 #include <stdlib.h>
 
 int	my_putstr(char const *str);
-
 int	my_str_isalpha(char const *str);
-
 int	separateur(char const *str)
 {
 	int i = 0;
 	int nb_separateur;
-	
+
 	while(str[i] != '\0') {
 		if(str[i] < 48 ||(str[i] > 57 && str[i] < 65) || (str[i] > 90 && str[i] < 97) || str[i] > 122)
 			nb_separateur++;
@@ -55,8 +53,8 @@ char	**my_str_to_word_array(char const *str)
 {
 	int nb_separateur = 0;
 	char **arr2;
-	
+
 	nb_separateur = separateur(str);
-       	arr2 = mise_en_tableau(str, nb_separateur);
-       	return (arr2);
+	arr2 = mise_en_tableau(str, nb_separateur);
+	return (arr2);
 }

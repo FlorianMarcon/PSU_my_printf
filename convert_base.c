@@ -2,25 +2,20 @@
 ** EPITECH PROJECT, 2017
 ** convert base
 ** File description:
-** 
+**
 */
-
 #include "my.h"
 #include <stdlib.h>
 
 int	chiffre(char const nbr);
-
 int	how_chiffre(int nb);
-
 char	*base_10(char const *nbr, int base);
-
 char	*conv_base_to(char const *bs10, int base);
-
 int	chiffre(char const nbr)
 {
 	int i = 48;
 	int resul = 0;
-	
+
 	while(i != nbr) {
 		i++;
 		resul++;
@@ -86,14 +81,14 @@ char	*conv_base_to(char const *bs10, int base)
 		i++;
 		buffer = malloc(sizeof(char) * (i + 2));
 		my_strncpy(buffer, bs, i);
-		
-				
+
+
 	}
 	bs[i] = '\0';
 	my_revstr(bs);
 	return (bs);
 }
-	
+
 char	*convert_base(char const *nbr, char const *base_from, char const *base_to)
 {
 	int lg_bs_fr = my_strlen(base_from);
@@ -104,10 +99,9 @@ char	*convert_base(char const *nbr, char const *base_from, char const *base_to)
 	bs10 = (char *)nbr;
 	if(lg_bs_fr != 10)
 		bs10 = base_10(nbr, lg_bs_fr);
-	
+
 	if(lg_bs_to == 10)
 		return (bs10);
 	final = conv_base_to(bs10, lg_bs_to);
-	return(final);	
+	return(final);
 }
-

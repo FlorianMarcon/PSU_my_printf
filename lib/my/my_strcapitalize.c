@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my_capitalize.c
 ** File description:
-** 
+**
 */
 #include "my.h"
 

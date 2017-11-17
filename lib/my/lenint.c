@@ -9,12 +9,12 @@
 
 int     lenint(int nb)
 {
-        int size = 0;
+	int size = 0;
 
-        while (nb != 0) {
-                nb -= (nb % 10);
-                nb = nb / 10;
-                size++;
-        }
-        return (size);
+	while (nb != 0) {
+		nb -= (nb % 10);
+		nb = nb / 10;
+		size++;
+	}
+	return (size);
 }

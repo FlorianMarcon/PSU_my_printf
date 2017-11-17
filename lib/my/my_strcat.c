@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my_strcat.c
 ** File description:
-** 
+**
 */
 #include <string.h>
 int    	my_strlen(char const *str);
@@ -13,7 +13,7 @@ char	*my_strcat(char *dest, char const *src)
 	int i = 0;
 
 	n = my_strlen(dest);
-       	while(src[i] != '\0') {
+	while(src[i] != '\0') {
 		dest[n + i] = src[i];
 		i++;
 	}

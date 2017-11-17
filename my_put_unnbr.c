@@ -4,7 +4,6 @@
 ** File description:
 ** display  unsigned number
 */
-
 #include "my.h"
 
 void	my_put_unnbr(unsigned int nb)
