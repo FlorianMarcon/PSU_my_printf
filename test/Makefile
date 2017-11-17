@@ -32,6 +32,7 @@ LDFLAGS	=	-lcriterion
 CFLAGS	=	-W -Wall -Wextra -Werror -I./../include
 
 all:		$(OBJ)
+	make -C ../
 	gcc -o $(NAME) $(OBJ) $(LDFLAGS) -L./../lib/my -lmy
 
 clean:
