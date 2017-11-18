@@ -17,5 +17,5 @@ int	my_strlen(char const *str)
 		str++;
 		i++;
 	}
-	return(i);
+	return (i);
 }

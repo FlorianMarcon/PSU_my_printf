@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my_strdup.c
 ** File description:
-** 
+**
 */
 #include <stdlib.h>
 
@@ -16,7 +16,7 @@ char	*my_strdup(char const *str)
 
 	n = my_strlen(str);
 	arr = malloc(sizeof(char) * (n + 1));
-	while(i != n) {
+	while (i != n) {
 		arr[i] = str[i];
 		i++;
 	}

@@ -52,8 +52,7 @@ int	print_S(va_list tmp, char *str)
 		}
 	}
 	else
-		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%S|\n");
-
+		my_putstr("\nDON'T NEED TO PRECISION: ONLY %%S\n");
 	return (1);
 }
 
@@ -74,7 +73,7 @@ int	printStr(va_list tmp, char *str)
 		}
 		var = lenint(my_getnbr(str)) + 1;
 	} else
-		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%s|\n");
+		my_putstr("\nDON'T NEED TO PRECISION: ONLY %%s\n");
 	return (var + 1);
 }
 
@@ -86,7 +85,7 @@ int	printChar(va_list tmp, char *str)
 	if (speci == 4)
 		my_putchar(letter);
 	else
-		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%c|\n");
+		my_putstr("\nDON'T NEED TO PRECISION: ONLY %%c\n");
 	return (1);
 }
 
@@ -97,93 +96,4 @@ int	printInt(va_list tmp, char *str)
 
 	my_put_nbr(nb);
 	return (1 + var);
-}
-
-int	printBinary(va_list tmp, char *str)
-{
-	unsigned int unsi = va_arg(tmp, unsigned int);
-	char *string = stock_int_in_str(unsi);
-//	int len;
-	int speci = find_speci(str);
-
-	if (speci == 4) {
-		string = convert_base(string, "0123456789", "01");
-//		len = my_strlen(string);
-		my_putstr(string);
-	}
-	else
-		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%b|\n");
-	return (1);
-}
-
-int	printOct(va_list tmp, char *str)
-{
-	int nb = va_arg(tmp, int);
-	char *string = stock_int_in_str(nb);
-	int len;
-
-	string = convert_base(string, "0123456789", "01234567");
-	len = speci_printOct(str, string);
-	my_putstr(string);
-	return (len + 1);
-}
-
-int	printHexa(va_list tmp, char *str)
-{
-	int nb = va_arg(tmp, int);
-	char *string = stock_int_in_str(nb);
-	int len = 0;
-
-	string = convert_base(string, "0123456789", "0123456789abcdef");
-	len += speci_printHexa(str, string);
-	string = my_strlowcase(string);
-	my_putstr(string);
-	return (len + 1);
-}
-
-int	printHexa_maj(va_list tmp, char *str)
-{
-	int nb = va_arg(tmp, int);
-	char *string = stock_int_in_str(nb);
-	int len =  0;
-
-	string = convert_base(string, "0123456789", "0123456789ABCDEF");
-	len += speci_printHexa_maj(str, string);
-	my_putstr(string);
-	return (len + 1);
-}
-
-void	printLen(va_list tmp, int size)
-{
-	int *len = va_arg(tmp , int *);
-
-	*len = size;
-}
-
-
-int	printUnint(va_list tmp, char *str)
-{
-	unsigned int nb = va_arg(tmp, unsigned int);
-	int len = speci_printUnint(str, nb);
-
-	my_put_unnbr(nb);
-	return (len + 1);
-}
-
-int	printAdresse(va_list tmp, char *str)
-{
-	unsigned int unsi = va_arg(tmp, unsigned int);
-	char *var2 = stock_int_in_str((int)unsi);
-//	int len = 0;
-	int speci = find_speci(str);
-
-	if (speci == 4) {
-		var2 = convert_base(var2, "0123456789", "0123456789ABCDEF");
-	//	len += my_strlen(var2) + 2;
-		my_putstr("0x");
-		my_putstr(var2);
-	}
-	else
-		my_putstr("\n|DON'T NEED TO PRECISION: ONLY %%p|\n");
-	return (1);
 }

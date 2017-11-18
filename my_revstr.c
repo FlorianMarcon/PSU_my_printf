@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my_revstr.c
 ** File description:
-** 
+**
 */
 #include <unistd.h>
 char	my_putchar(char c);
@@ -21,7 +21,7 @@ char	*my_revstr(char *str)
 	a = my_strlen(str);
 	a_start = a;
 	a--;
-	for(i = 0; i != a_start/2; i++){
+	for (i = 0; i != a_start/2; i++){
 		variable = str[i];
 		str[i] = str[a];
 		str[a] = variable;

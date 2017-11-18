@@ -11,7 +11,7 @@ int     len_unint(unsigned int nb)
 	int size = 1;
 
 	nb = nb / 10;
-	if(nb != 0)
+	if (nb != 0)
 		size +=len_unint(nb);
 	return (size);
 }

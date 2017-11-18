@@ -17,7 +17,7 @@ char    *stock_int_in_str(int nb)
 		return (NULL);
 	str[i] = '\0';
 	i--;
-	while(nb != 0) {
+	while (nb != 0) {
 		str[i] = (nb % 10) + '0';
 		nb = (nb - (nb % 10)) / 10;
 		i--;

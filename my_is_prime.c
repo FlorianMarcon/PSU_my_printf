@@ -17,12 +17,12 @@ int	my_is_prime(int nb)
 		case 2 : return (1);
 		case 3 : return (1);
 	}
-	while(i!=(nb+1)/2) {
-		x = my_compute_power_rec(i,2) + (i-1);
-		if(x == nb)
+	while (i!= (nb + 1) / 2) {
+		x = my_compute_power_rec(i, 2) + (i - 1);
+		if (x == nb)
 			return (1);
-		x = my_compute_power_rec(i,2) + (i+1);
-		if(x == nb)
+		x = my_compute_power_rec(i, 2) + (i + 1);
+		if (x == nb)
 			return (1);
 		i++;
 	}

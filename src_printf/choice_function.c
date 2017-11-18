@@ -20,7 +20,7 @@ int	choice_function(va_list tmp, char *balise)
 
 	while (a != len) {
 		i = 0;
-		while(i != 12) {
+		while (i != 12) {
 			if (balise[a] == tab[i].balise) {
 				size = tab[i].fptr(tmp, balise);
 				return (size);

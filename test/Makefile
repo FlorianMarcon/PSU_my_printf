@@ -20,8 +20,11 @@ DIR_SRC	=	../src_printf
 SRC	=	$(DIR_SRC)/my_printf.c		\
 		$(DIR_SRC)/choice_function.c	\
 		$(DIR_SRC)/functions.c		\
+		$(DIR_SRC)/functions2.c		\
+		$(DIR_SRC)/functions3.c		\
 		$(DIR_SRC)/print_speci.c	\
 		$(DIR_SRC)/speci.c		\
+		$(DIR_SRC)/printInt/printInt_speci.c
 
 OBJ	= 	$(SRC:.c=.o) $(SRC_UT:.c=.o)
 

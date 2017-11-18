@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my_sort_int_array.c
 ** File description:
-** 
+**
 */
 #include "my.h"
 
@@ -13,11 +13,11 @@ void	my_sort_int_array(int *array, int size)
 	int z = 0;
 	int buff;
 
-	while(z != size - 1) {
+	while (z != size - 1) {
 		i = z;
 		a = i + 1;
-		while(a != size) {
-			if(array[i] > array[a]) {
+		while (a != size) {
+			if (array[i] > array[a]) {
 				buff = array[i];
 				array[i] = array[a];
 				array[a] = buff;
@@ -29,4 +29,3 @@ void	my_sort_int_array(int *array, int size)
 		z++;
 	}
 }
-

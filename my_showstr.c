@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my_showstr.c
 ** File description:
-** 
+**
 */
 #include "my.h"
 
@@ -15,14 +15,14 @@ int	my_showstr(char const *str)
 	int a = 0;
 
 	arr[3] = '\0';
-	while(str[i] != '\0') {
-		if(str[i] > 31)
+	while (str[i] != '\0') {
+		if (str[i] > 31)
 			my_putchar(str[i]);
 		else {
 			nb = str[i];
-			while(nb != 0) {
+			while (nb != 0) {
 				total = nb % 16;
-				if(total > 9)
+				if (total > 9)
 					arr[a] = total + 55;
 				else
 					arr[a] = total + 48;

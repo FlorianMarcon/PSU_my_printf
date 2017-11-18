@@ -12,7 +12,7 @@ void	my_put_unnbr(unsigned int nb)
 
 	mod = nb % 10;
 	nb = nb / 10;
-	if(nb != 0) {
+	if (nb != 0) {
 		my_put_unnbr(nb);
 		my_putchar(mod + '0');
 	}

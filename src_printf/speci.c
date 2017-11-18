@@ -10,7 +10,6 @@
 #include "header_MY_PRINTF.h"
 #include <stdlib.h>
 
-
 int	find_speci(char *str)
 {
 	int z = 0;

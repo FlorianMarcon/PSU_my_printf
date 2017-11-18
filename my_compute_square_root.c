@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2017
 ** my_compute_square_root.c
 ** File description:
-** 
+**
 */
 #include "my.h"
 
@@ -10,11 +10,10 @@ int	my_compute_square_root(int nb)
 {
 	int i = 0;
 
-	while(i*i != nb) {
+	while (i * i != nb) {
 		i++;
 		if (i > (nb))
-			return (0);	
+			return (0);
 	}
 	return (i);
 }
-

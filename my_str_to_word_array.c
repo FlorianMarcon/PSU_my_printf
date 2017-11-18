@@ -13,8 +13,8 @@ int	separateur(char const *str)
 	int i = 0;
 	int nb_separateur;
 
-	while(str[i] != '\0') {
-		if(str[i] < 48 ||(str[i] > 57 && str[i] < 65) || (str[i] > 90 && str[i] < 97) || str[i] > 122)
+	while (str[i] != '\0') {
+		if (str[i] < 48 || (str[i] > 57 && str[i] < 65) || (str[i] > 90 && str[i] < 97) || str[i] > 122)
 			nb_separateur++;
 		i ++;
 	}
@@ -31,10 +31,10 @@ char	**mise_en_tableau(char const *str, int nb_separateur)
 	char **arr;
 
 	arr = malloc (sizeof(int) * (nb_separateur + 1));
-	while(str[i] != '\0') {
+	while (str[i] != '\0') {
 		if (str[i] < 48 ||(str[i] > 57 && str[i] < 65) || (str[i] > 90 && str[i] < 97) || str[i] > 122) {
-			arr[c] = malloc(sizeof(int) * (a+1));
-			while(b != a) {
+			arr[c] = malloc(sizeof(int) * (a + 1));
+			while (b != a) {
 				arr[c][b] = str[i - a + b];
 				b++;
 			}
@@ -47,7 +47,7 @@ char	**mise_en_tableau(char const *str, int nb_separateur)
 		a++;
 	}
 	arr[c] = NULL;
-	return(arr);
+	return (arr);
 }
 char	**my_str_to_word_array(char const *str)
 {
