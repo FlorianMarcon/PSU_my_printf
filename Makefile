@@ -7,6 +7,7 @@
 
 SRC	=	$(wildcard *.c)		\
 		src_printf/printInt/printInt_speci.c	\
+		src_printf/printOct/printOct_speci.c	\
 		src_printf/my_printf.c	\
 		src_printf/choice_function.c	\
 		src_printf/functions.c		\

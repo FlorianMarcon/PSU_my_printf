@@ -14,6 +14,7 @@ SRC_UT	=	$(DIR_SRC_UT)/test_utils.c \
 		printBinary/test_utils.c	\
 		printHexa/test_utils.c		\
 		printHexa_maj/test_utils.c	\
+		printOct/test_utils.c		\
 
 DIR_SRC	=	../src_printf
 
@@ -24,7 +25,10 @@ SRC	=	$(DIR_SRC)/my_printf.c		\
 		$(DIR_SRC)/functions3.c		\
 		$(DIR_SRC)/print_speci.c	\
 		$(DIR_SRC)/speci.c		\
-		$(DIR_SRC)/printInt/printInt_speci.c
+		$(DIR_SRC)/printInt/printInt_speci.c		\
+		$(DIR_SRC)/printOct/printOct_speci.c		\
+		$(DIR_SRC)/printHexa/printHexa_speci.c		\
+		$(DIR_SRC)/printUnint/printUnint_speci.c		\
 
 OBJ	= 	$(SRC:.c=.o) $(SRC_UT:.c=.o)
 
