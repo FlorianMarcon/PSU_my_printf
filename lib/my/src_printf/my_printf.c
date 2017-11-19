@@ -10,7 +10,6 @@
 #include "header_MY_PRINTF.h"
 #include <stdio.h>
 
-
 int	my_printf(char *str, ...)
 {
 	va_list tmp;
@@ -18,15 +17,15 @@ int	my_printf(char *str, ...)
 	int size = my_strlen(str);
 
 	va_start(tmp, str);
-	while(i <= size) {
-		if(str[i] == '%') {
+	while (i < size) {
+		if (str[i] == '%') {
 			i++;
 			i += choice_function(tmp, &str[i]);
 		}
 		else {
 			my_putchar(str[i]);
+			i++;
 		}
-		i++;
 	}
 	va_end(tmp);
 	return (0);
