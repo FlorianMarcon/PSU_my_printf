@@ -1,0 +1,8 @@
+rm my_printf/*.o
+rm printBinary/*.o
+rm printHexa/*.o
+rm printHexa_maj/*.o
+rm printInt/*.o
+rm printInt2/*.o
+rm printOct/*.o
+rm print_S/*.o
