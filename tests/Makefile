@@ -1,56 +1,68 @@
 ##
 ## EPITECH PROJECT, 2017
-## makefile
+## Makefile pour compresser lib
 ## File description:
-## test unitare
+## test
 ##
 
-DIR_SRC_UT	=	my_printf
+CC	=	gcc
 
-SRC_UT	=	$(DIR_SRC_UT)/test_utils.c \
-		printInt/test_utils.c		\
-		printInt2/test_utils.c		\
-		print_S/test_utils.c		\
-		printBinary/test_utils.c	\
-		printHexa/test_utils.c		\
-		printHexa_maj/test_utils.c	\
-		printOct/test_utils.c		\
+WAY	=	../src_printf
 
-DIR_SRC	=	../src_printf
+WAY_OTHER	=	$(WAY)/other_src
 
-SRC	=	$(DIR_SRC)/my_printf.c		\
-		$(DIR_SRC)/choice_function.c	\
-		$(DIR_SRC)/functions.c		\
-		$(DIR_SRC)/functions2.c		\
-		$(DIR_SRC)/functions3.c		\
-		$(DIR_SRC)/print_speci.c	\
-		$(DIR_SRC)/speci.c		\
-		$(DIR_SRC)/printInt/printInt_speci.c		\
-		$(DIR_SRC)/printOct/printOct_speci.c		\
-		$(DIR_SRC)/printHexa/printHexa_speci.c		\
-		$(DIR_SRC)/printUnint/printUnint_speci.c		\
+SRC	=	$(WAY)/print_int/print_int_speci.c	\
+		$(WAY)/print_oct/print_oct_speci.c	\
+		$(WAY)/print_hexa/print_hexa_speci.c	\
+		$(WAY)/print_unint/print_unint_speci.c	\
+		$(WAY)/my_printf.c	\
+		$(WAY)/choice_function.c	\
+		$(WAY)/functions_printfirst.c		\
+		$(WAY)/functions_printsecond.c		\
+		$(WAY)/functions_printthird.c		\
+		$(WAY)/print_speci.c	\
+		$(WAY)/find_speci.c		\
+		$(WAY_OTHER)/conv_base_to.c	\
+		$(WAY_OTHER)/convert_base.c	\
+		$(WAY_OTHER)/lenint.c		\
+		$(WAY_OTHER)/my_getnbr.c	\
+		$(WAY_OTHER)/my_put_unnbr.c	\
+		$(WAY_OTHER)/my_putchar.c	\
+		$(WAY_OTHER)/my_putstr.c	\
+		$(WAY_OTHER)/my_strlen.c	\
+		$(WAY_OTHER)/my_strlowcase.c	\
+		$(WAY_OTHER)/stock_int_in_str.c	\
+		$(WAY_OTHER)/my_put_nbr.c	\
+		$(WAY_OTHER)/my_strdup.c	\
+		$(WAY_OTHER)/my_revstr.c	\
+		$(WAY_OTHER)/my_strncpy.c	\
+		$(WAY_OTHER)/len_unint.c	\
+		$(WAY_OTHER)/my_compute_power_rec.c	\
 
-OBJ	= 	$(SRC:.c=.o) $(SRC_UT:.c=.o)
+SRC_UT	=	print_hexa/tests_utils.c	\
+		my_printf/tests_utils.c		\
+		print_s/tests_utils.c	\
+
+OBJ	=	$(SRC:.c=.o)
+
+OBJ_UT	=	$(SRC_UT:.c=.o)
+
+CFLAGS	=	-I../include -g3 -W -Wall -Wextra -Werror --coverage
+
+LDFLAGS	=	-lcriterion -lgcov
 
 NAME	=	units
 
-LDFLAGS	=	-lcriterion
-
-CFLAGS	=	-W -Wall -Wextra -Werror -I./../include
-
-all:		$(OBJ)
-	make -C ../
-	gcc -o $(NAME) $(OBJ) $(LDFLAGS) -L./../lib/my -lmy
+all:	$(OBJ) $(OBJ_UT)
+	$(CC) -o $(NAME) $(OBJ) $(OBJ_UT) $(LDFLAGS)
+	./$(NAME)
 
 clean:
 	rm -f $(OBJ)
+	rm -f $(SRC:.c=.gcno)
+	rm -f $(SRC:.c=.gcda)
+	rm -f $(SRC_UT:.c=.gcno)
+	rm -f $(SRC_UT:.c=.gcda)
 
-fclean: rm -f $(NAME)
-	rm -f $(DIR_SRC)/*.o
-	rm -f $(DIR_SRC_UT)/*.o
-	rm -f $(DIR_SRC)/*#
-	rm -f $(DIR_SRC_UT)/*#
-	rm -f $(DIR_SRC)/*~
-	rm -f $(DIR_SRC_UT)/*~
-
-re: all clean
+fclean:	clean
+	rm -f $(NAME)
