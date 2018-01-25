@@ -18,7 +18,7 @@ int	print_binary(va_list tmp, char *str)
 	int speci = find_speci(str);
 
 	if (speci == 4) {
-		string = convert_base(string, "0123456789", "01");
+		string = convert_baseten_to_n(my_getnbr(string), "01");
 		my_putstr(string);
 	}
 	else
@@ -32,7 +32,8 @@ int	print_oct(va_list tmp, char *str)
 	char *string = stock_int_in_str(nb);
 	int len;
 
-	string = convert_base(string, "0123456789", "01234567");
+	string = convert_baseten_to_n\
+			(my_getnbr(string), "01234567");
 	len = speci_print_oct(str, string);
 	my_putstr(string);
 	return (len + 1);
@@ -44,7 +45,8 @@ int	print_hexa(va_list tmp, char *str)
 	char *string = stock_int_in_str(nb);
 	int len = 0;
 
-	string = convert_base(string, "0123456789", "0123456789abcdef");
+	string = convert_baseten_to_n\
+		(my_getnbr(string), "0123456789abcdef");
 	len += speci_print_hexa(str, string);
 	string = my_strlowcase(string);
 	my_putstr(string);
@@ -57,7 +59,7 @@ int	print_hexa_maj(va_list tmp, char *str)
 	char *string = stock_int_in_str(nb);
 	int len =  0;
 
-	string = convert_base(string, "0123456789", "0123456789ABCDEF");
+	string = convert_baseten_to_n(my_getnbr(string), "0123456789ABCDEF");
 	len += speci_print_hexa_maj(str, string);
 	my_putstr(string);
 	return (len + 1);

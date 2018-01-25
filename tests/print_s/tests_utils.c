@@ -23,7 +23,7 @@ Test(redirect, print_S_2, redirect_all_std)
 	str[4] = 29;
 
 	my_printf("%S", str);
-	cr_assert_stdout_eq_str("sal\\006\\029");
+	cr_assert_stdout_eq_str("sal\\006\\035");
 }
 
 Test(redirect, print_S_3, redirect_all_std)

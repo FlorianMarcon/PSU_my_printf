@@ -118,4 +118,6 @@ int	len_list(struct linked_list *tmp);
 
 void	add_two_list(struct linked_list *first, struct linked_list *second);
 
+char	*convert_baseten_to_n(int nb, char *base_to);
+
 #endif

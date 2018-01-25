@@ -71,9 +71,9 @@ char	*convert_base(char const *nbr, char const *base_fr, char const *base_to)
 	bs10 = (char *)nbr;
 	if (lg_bs_fr != 10)
 		bs10 = base_10(nbr, lg_bs_fr);
-
 	if (lg_bs_to == 10)
 		return (bs10);
 	final = conv_base_to(bs10, lg_bs_to);
+	printf("test %s\n", final);
 	return (final);
 }

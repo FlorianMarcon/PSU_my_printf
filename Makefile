@@ -38,6 +38,7 @@ SRC	=	$(WAY)/print_int/print_int_speci.c	\
 		$(WAY_OTHER)/my_strncpy.c	\
 		$(WAY_OTHER)/len_unint.c	\
 		$(WAY_OTHER)/my_compute_power_rec.c	\
+		$(WAY_OTHER)/convert_baseten_to_n.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -47,6 +48,7 @@ all:	$(OBJ)
 	ar rc libmy.a $(OBJ)
 
 clean:
+	make clean -C./tests
 	rm -f $(OBJ)
 
 fclean: clean

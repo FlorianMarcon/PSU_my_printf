@@ -27,7 +27,8 @@ int	print_adresse(va_list tmp, char *str)
 	int speci = find_speci(str);
 
 	if (speci == 4) {
-		var2 = convert_base(var2, "0123456789", "0123456789ABCDEF");
+		var2 = convert_baseten_to_n\
+					(my_getnbr(var2),"0123456789ABCDEF");
 		my_putstr("0x");
 		my_putstr(var2);
 	}

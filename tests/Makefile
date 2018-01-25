@@ -38,10 +38,16 @@ SRC	=	$(WAY)/print_int/print_int_speci.c	\
 		$(WAY_OTHER)/my_strncpy.c	\
 		$(WAY_OTHER)/len_unint.c	\
 		$(WAY_OTHER)/my_compute_power_rec.c	\
+		$(WAY_OTHER)/convert_baseten_to_n.c	\
 
-SRC_UT	=	print_hexa/tests_utils.c	\
+SRC_UT	=	print_binary/tests_utils.c	\
+		print_hexa/tests_utils.c	\
+		print_hexa_maj/tests_utils.c	\
+		print_int/tests_utils.c		\
+		print_int_second/tests_utils.c		\
+		print_oct/tests_utils.c		\
+		print_s/tests_utils.c		\
 		my_printf/tests_utils.c		\
-		print_s/tests_utils.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -59,6 +65,7 @@ all:	$(OBJ) $(OBJ_UT)
 
 clean:
 	rm -f $(OBJ)
+	rm -f $(OBJ_UT)
 	rm -f $(SRC:.c=.gcno)
 	rm -f $(SRC:.c=.gcda)
 	rm -f $(SRC_UT:.c=.gcno)
