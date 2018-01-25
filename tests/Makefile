@@ -42,10 +42,15 @@ SRC	=	$(WAY)/print_int/print_int_speci.c	\
 
 SRC_UT	=	print_binary/tests_utils.c	\
 		print_hexa/tests_utils.c	\
+		print_hexa/tests_utils_second.c	\
 		print_hexa_maj/tests_utils.c	\
+		print_hexa_maj/tests_utils_second.c	\
 		print_int/tests_utils.c		\
-		print_int_second/tests_utils.c		\
+		print_int/tests_utils_second.c		\
+		print_int/tests_utils_third.c		\
+		print_int/tests_utils_four.c		\
 		print_oct/tests_utils.c		\
+		print_oct/tests_utils_second.c		\
 		print_s/tests_utils.c		\
 		my_printf/tests_utils.c		\
 

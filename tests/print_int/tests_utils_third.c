@@ -40,27 +40,3 @@ Test(redirect, INT2_5, redirect_all_std)
 	my_printf("%1d", 12);
 	cr_assert_stdout_eq_str("12");
 }
-
-Test(redirect, INT2_6, redirect_all_std)
-{
-	my_printf("%+d", 12);
-	cr_assert_stdout_eq_str("+12");
-}
-
-Test(redirect, INT2_7, redirect_all_std)
-{
-	my_printf("%+d", -12);
-	cr_assert_stdout_eq_str("-12");
-}
-
-Test(redirect, INT2_8, redirect_all_std)
-{
-	my_printf("% d", 12);
-	cr_assert_stdout_eq_str(" 12");
-}
-
-Test(redirect, INT2_9, redirect_all_std)
-{
-	my_printf("% 3d", 12);
-	cr_assert_stdout_eq_str("   12");
-}
